@@ -1,0 +1,61 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Articles</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Chivo|Josefin+Sans|Nunito+Sans|Poppins|Raleway|Space+Mono|Ubuntu" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+  <a href="{% url 'home' %}">
+    <img id ="logo" src="{% static 'Artboard 1.png' %}"/>
+  </a>
+
+  <header class="wrapper">
+    
+    <nav>
+
+      <ul>
+        {% if user.is_authenticated %}
+        <li>
+          <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+            {%  csrf_token %}
+            <button type="submit">Log Out</button>
+          </form>
+        </li>
+        <li><a href="{% url 'articles:create' %}" class="highlight">New Article</a></li>
+        {% else %}
+        <li><a href="{% url 'accounts:login' %}">Log In</a></li>
+        <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+        {% endif %}
+      </ul>
+    
+    </nav>
+
+  </header>
+  <div class="wrapper">
+  {% block content %}
+  {% endblock %}
+  </div>
+  
+  <div id='inspired'>
+    Are you having writer's block. Get inspired:
+    <h6 id='quote-box'></h6>
+  </div>
+
+  <head>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src={% static 'app.js' %}></script>
+  </head>
+  </body>
+</html>
