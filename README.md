@@ -1,44 +1,32 @@
-# Python: Getting Started
+Project Group-4: Nest Ninjas
 
-A barebones Django app, which can easily be deployed to Heroku.
+Deployed app: https://lit-garden-88226.herokuapp.com/
+Trello board: https://trello.com/b/NxEL6DH5/group-project
+For this project, we wanted to take a different route of getting ideas. We decided to based our app by looking at available APIs. We picked:
 
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
+- Soundcloud
+- Houdify
+- NASA
+- Jamendo
+- Spotify
 
-## Running Locally
+(picture of board)
 
-Make sure you have Python [installed properly](http://install.python-guide.org). Also, install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
+We picked Houndifiy at first, because we wanted to create a blog that can be created using talk commands.
 
-```sh
-$ git clone git@github.com:heroku/python-getting-started.git
-$ cd python-getting-started
+(picture of wireframe)
 
-$ pipenv install
+After taking into account how many work days we actually have for this project, we took a completely different API:
 
-$ createdb python_getting_started
+- Talaikis
 
-$ python manage.py migrate
-$ python manage.py collectstatic
+Talaikis API generates different random quote by different random people, and we used it as inpirational quote for out bloggers.
 
-$ heroku local
-```
+Division of workloads:
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+Auburn: Skeleton of front-end and back-end
+Victor: APIs, front-end design
+Bart: Deploy, Secretary
 
-## Deploying to Heroku
+We definitely learned a lot during this project and the most exciting thing about working on this project is that we actually reached a point where we can be somewhat comfortable before presentation time.
 
-```sh
-$ heroku create
-$ git push heroku master
-
-$ heroku run python manage.py migrate
-$ heroku open
-```
-or
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Python on Heroku, see these Dev Center articles:
-
-- [Python on Heroku](https://devcenter.heroku.com/categories/python)
